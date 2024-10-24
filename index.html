@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notre Menu - Restaurant</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="logo">Restaurant</a>
+        <div id="navButtons">
+            <a href="login.html" class="admin-login" id="loginBtn">Administration</a>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <div class="container">
+            <h1 class="page-title">Notre Menu</h1>
+            <p class="page-subtitle">Découvrez nos délicieuses spécialités</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <div id="adminPanel" class="admin-panel" style="display: none;">
+            <button onclick="window.location.href='add-item.html'" class="add-button">
+                + Ajouter un article
+            </button>
+        </div>
+
+        <div class="filter-section">
+            <label for="categoryFilter">Filtrer par catégorie :</label>
+            <select id="categoryFilter" onchange="filterByCategory()">
+                <option value="">Toutes les catégories</option>
+                <option value="Entrées">Entrées</option>
+                <option value="Plats">Plats</option>
+                <option value="Desserts">Desserts</option>
+                <option value="Drinks">Boissons</option>
+            </select>
+        </div>
+
+        <div id="loading">
+            <div class="loading-spinner"></div>
+            <p>Chargement du menu...</p>
+        </div>
+
+        <div id="menu" class="items-grid"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
